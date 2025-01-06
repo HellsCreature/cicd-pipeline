@@ -21,11 +21,13 @@ pipeline {
 
     stage('image push') {
       steps {
-        sh '''sh docker.withRegistry(\'https://registry.hub.docker.com\', \'docker_hub_creds_id\')
-        { 
-          app.push("arsl/cicdimage") 
-          app.push("latest") 
-        }'''
+        script {
+          docker.withRegistry(\'https://registry.hub.docker.com\', \'docker_hub_creds_id\')
+          { 
+            app.push("arsl/cicdimage") 
+            app.push("latest") 
+          }
+        }
       }
     }
 
