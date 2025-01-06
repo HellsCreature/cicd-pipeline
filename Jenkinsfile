@@ -38,20 +38,5 @@ app.push("latest")
       }
     }
 
-    stage('') {
-      steps {
-        script {
-          test te
-
-
-          dfsd
-          fsdf
-
-          sdf
-        }
-
-      }
-    }
-
   }
 }
