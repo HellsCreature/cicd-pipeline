@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('github checkout') {
+    stage('build') {
       steps {
         sh 'sh /scripts/build.sh'
       }
