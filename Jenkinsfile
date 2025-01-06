@@ -23,7 +23,33 @@ sh \'./scripts/build.sh\''''
 
     stage('image build') {
       steps {
-        sh 'sh \'docker build -t arseniy/cicdimage\''
+        sh 'sh \'docker build -t arsl/cicdimage\''
+      }
+    }
+
+    stage('image push') {
+      steps {
+        sh '''sh \'docker.withRegistry(\'https://registry.hub.docker.com\', \'docker_hub_creds_id\')  
+
+{ 
+app.push("arsl/cicdimage") 
+app.push("latest") 
+}\''''
+      }
+    }
+
+    stage('') {
+      steps {
+        script {
+          test te
+
+
+          dfsd
+          fsdf
+
+          sdf
+        }
+
       }
     }
 
